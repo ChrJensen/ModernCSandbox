@@ -162,6 +162,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="gsl\gsl" />
+    <None Include="gsl\gsl_algorithm" />
+    <None Include="gsl\gsl_assert" />
+    <None Include="gsl\gsl_byte" />
+    <None Include="gsl\gsl_util" />
+    <None Include="gsl\multi_span" />
+    <None Include="gsl\pointers" />
+    <None Include="gsl\span" />
+    <None Include="gsl\string_span" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

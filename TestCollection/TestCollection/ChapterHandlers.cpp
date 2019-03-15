@@ -70,6 +70,9 @@ void HandleChapter13(const int &sect)
 	case 2:
 		p->HandleSection13_2();
 		break;
+	case 3:
+		p->HandleSection13_3();
+		break;
 	default:
 		cout << "No such section or not implemented ";
 		break;

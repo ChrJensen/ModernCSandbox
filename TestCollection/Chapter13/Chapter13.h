@@ -15,6 +15,7 @@ namespace Chapter13NS
 		~Chapter13();
 		void  HandleSection13_1();
 		void  HandleSection13_2();
+		void  HandleSection13_3();
 
 	};
 }

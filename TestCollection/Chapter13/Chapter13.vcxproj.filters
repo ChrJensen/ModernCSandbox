@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="gsl">
+      <UniqueIdentifier>{3fb6f685-dfee-4778-8b8c-b1a1aab4f468}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -35,5 +38,34 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gsl\gsl">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\gsl_algorithm">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\gsl_assert">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\gsl_byte">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\gsl_util">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\multi_span">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\pointers">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\span">
+      <Filter>gsl</Filter>
+    </None>
+    <None Include="gsl\string_span">
+      <Filter>gsl</Filter>
+    </None>
   </ItemGroup>
 </Project>

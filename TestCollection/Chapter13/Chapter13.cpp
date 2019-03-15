@@ -5,6 +5,8 @@
 #include "Chapter13.h"
 #include <iostream>
 #include <vector>
+#include "gsl\span"
+
 
 using namespace std;
 
@@ -33,6 +35,11 @@ public:
 	}
 };
 
+void usePtr(S s)
+{
+	cout << s.s.c_str() << '\n';
+}
+
 void Chapter13NS::Chapter13::HandleSection13_2()
 {
 	auto p1 = make_shared<S>(1, "Acme Inc", 1.2);
@@ -48,5 +55,30 @@ void Chapter13NS::Chapter13::HandleSection13_2()
 	cout << p3 << '\n';
 	cout << p3->s.c_str() << '\n';
 	cout << p2 << '\n';
+
+
+	usePtr(*p1);
+	usePtr(*p3);
+
+}
+using namespace gsl;
+
+void useSpan(span<int> p)
+{
+	cout << '\n';
+	for (int x : p)
+		x = 1;
+
+	for (int y : p)
+		cout << y << '\n';
+}
+
+void Chapter13NS::Chapter13::HandleSection13_3()
+{
+
+	int a[5];
+	useSpan(a);
+	useSpan({ a ,10 });
+	useSpan({ a + 2,2 });
 
 }
