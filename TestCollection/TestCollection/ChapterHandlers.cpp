@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "..\Chapter1\Chapter1.h"
 #include "..\Chapter2\Chapter2.h"
+#include "..\Chapter13\Chapter13.h"
+#include "ChapterHandlers.h"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -54,5 +56,24 @@ void HandleChapter2(const int &sect)
 		cout << "No such section";
 		break;
 	}
+}
+
+void HandleChapter13(const int &sect)
+{
+	using namespace Chapter13NS;
+	auto p = make_unique<Chapter13>();
+	switch (sect)
+	{
+	case 1:
+		p->HandleSection13_1();
+		break;
+	case 2:
+		p->HandleSection13_2();
+		break;
+	default:
+		cout << "No such section or not implemented ";
+		break;
+	}
+
 }
 
