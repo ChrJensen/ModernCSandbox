@@ -68,7 +68,7 @@ plant& operator++(plant & t)
 }
 
 template<typename Target = string, typename Source = plant> Target to(Source t)
-{
+{ // Returns next value it will get if incremented!!!
 	string res;
 	switch (t) {
 	case plant::tree: return res = "plant::bush";
@@ -81,10 +81,11 @@ template<typename Target = string, typename Source = plant> Target to(Source t)
 
 
 ostream &operator<<(ostream& lhs, const plant& rhs)
-{
+{  // this streams out next value it will get if incremented!!!
 	lhs << to(rhs);
 	return lhs;
 }
+
 void Chapter2NS::Chapter2::HandleSection2_5()
 {
 	cout << '\n';
@@ -93,11 +94,14 @@ void Chapter2NS::Chapter2::HandleSection2_5()
 	cout << v << '\n';
 
 	++v;
-	cout << to(v) << '\n';
-
+	cout << v << '\n';
+	
 	++v;
-	cout << to(v) << '\n';
-
-	v = plant::tree;
-
+	cout << v << '\n';
+	
+	++v;
+	cout << v << '\n';
+	auto bb = v == plant::tree;
+	
+	cout << (bb ? "True" : "false") << '\n';
 }
