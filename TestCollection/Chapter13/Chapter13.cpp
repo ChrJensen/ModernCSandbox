@@ -28,37 +28,57 @@ public:
 	int j;
 	string s;
 	double d;
+	S(S&src)
+	{
+		s = "copy of ";
+		s.append(src.s);
+		j = 666;
+		d = 6.66;
+		cout << s.c_str() << "S created" << '\n';
+
+	}
+	S() = delete;
+
 	S(int i, string s1, double d1) {
 		j = i;
 		s = s1;
 		d = d1;
+		cout << s.c_str() << " created" << '\n';
+	}
+	~S() 
+	{
+		cout << s.c_str() << " destroyed" << '\n';
 	}
 };
 
-void usePtr(S s)
+void usePtr(S &s)
 {
-	cout << s.s.c_str() << '\n';
+	cout << "Using " << s.s.c_str() << '\n';
 }
 
 void Chapter13NS::Chapter13::HandleSection13_2()
 {
-	auto p1 = make_shared<S>(1, "Acme Inc", 1.2);
-	auto p2 = make_unique<S>(2, "Ron Weasley", 3.2);
+	auto p1 = make_shared<S>(1, "P1 Acme Inc", 1.2);
+	auto p2 = make_unique<S>(2, "P2 Ron Weasley", 3.2);
 
 	cout << '\n';
 
-	cout << p1->d << '\n';
-	cout << p2 << '\n';
-	cout << p2->j << '\n';
+	cout << "p1.d : =" << p1->d << '\n';
+	cout << "p2   : =" << p2 << '\n';
+	cout << "p2.j : =" << p2->j << '\n';
 
-	auto p3 = move(p2);
-	cout << p3 << '\n';
-	cout << p3->s.c_str() << '\n';
-	cout << p2 << '\n';
+	{	
+		auto p3 = move(p2);  // transfer ownership to p3 
 
+		cout << "p3   : =" << p3 << '\n';
+		cout << "p3.s : =" << p3->s.c_str() << '\n';
+		cout << "p2   : =" << p2 << '\n';
+		usePtr(*p3);
+		shared_ptr<S> p4 = p1; // share owership with p1
+		usePtr(*p4);
+	}
 
 	usePtr(*p1);
-	usePtr(*p3);
 
 }
 using namespace gsl;
