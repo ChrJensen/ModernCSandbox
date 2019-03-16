@@ -1,8 +1,8 @@
 #include "stdafx.h"
+#include "ChapterHandlers.h"
 #include "..\Chapter1\Chapter1.h"
 #include "..\Chapter2\Chapter2.h"
 #include "..\Chapter13\Chapter13.h"
-#include "ChapterHandlers.h"
 #include <iostream>
 #include <vector>
 #include <string>
